@@ -23,12 +23,14 @@ public class DarkSoulsLogic
             try
             {
                 var hp = _darkSouls.GetHp();
+                var inGame = _darkSouls.InGame();
+                var isDead = _darkSouls.IsDead();
 
                 if (_alive == false && hp > 0)
                 {
                     _alive = true;
                 }
-                else if (_alive && hp == 0)
+                else if (_alive && hp == 0 && inGame && isDead)
                 {
                     //Died
                     _alive = false;
@@ -37,6 +39,7 @@ public class DarkSoulsLogic
             }
             catch (DarkSoulsNotOpenedException ex)
             {
+                _alive = false;
                 Console.WriteLine("DarkSouls is not opened");
             }
             catch (Exception ex)

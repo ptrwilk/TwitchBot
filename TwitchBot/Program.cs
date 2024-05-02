@@ -1,18 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
-using System.Diagnostics;
-using System.Net.Sockets;
-using System.Runtime.InteropServices;
-using Swed64;
 using TwitchBot;
 
 var sender = new MessageSender();
 var reader = new KeyReader();
+var darkSoulsLogic = new DarkSoulsLogic(new DarkSouls());
+
+darkSoulsLogic.CharacterDied += () =>
+{
+   Console.WriteLine("DIED");
+   sender.Send();
+};
+
 reader.KeyPressed += () =>
 {
    sender.Send();
 };
 reader.Start();
+
 
 Console.WriteLine("cxzczxcx");
 Console.ReadKey();

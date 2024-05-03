@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchBot", "TwitchBot\TwitchBot.csproj", "{654874B0-1269-4892-8824-A91B7B4CDBD4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitchBot.WPF", "TwitchBot.WPF\TwitchBot.WPF.csproj", "{D5293E46-14CA-42F3-A7E5-5B8F4634701F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{654874B0-1269-4892-8824-A91B7B4CDBD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{654874B0-1269-4892-8824-A91B7B4CDBD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{654874B0-1269-4892-8824-A91B7B4CDBD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5293E46-14CA-42F3-A7E5-5B8F4634701F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5293E46-14CA-42F3-A7E5-5B8F4634701F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5293E46-14CA-42F3-A7E5-5B8F4634701F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5293E46-14CA-42F3-A7E5-5B8F4634701F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

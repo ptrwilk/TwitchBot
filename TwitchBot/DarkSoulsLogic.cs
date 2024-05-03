@@ -25,6 +25,8 @@ public class DarkSoulsLogic
                 var hp = _darkSouls.GetHp();
                 var inGame = _darkSouls.InGame();
                 var isDead = _darkSouls.IsDead();
+                
+                Console.WriteLine(isDead);
 
                 if (_alive == false && hp > 0)
                 {

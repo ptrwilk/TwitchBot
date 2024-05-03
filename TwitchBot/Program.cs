@@ -1,14 +1,23 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using Microsoft.EntityFrameworkCore;
 using TwitchBot;
+using TwitchBot.Data;
+using TwitchBot.Factories;
+using TwitchBot.Models;
 
 var sender = new MessageSender();
 var reader = new KeyReader();
 var darkSoulsLogic = new DarkSoulsLogic(new DarkSouls());
 
+var context = new DataContextFactory().Create(DatabaseType.DeadAlive);
+
+var zzzz = context.Results.ToList();
+
 darkSoulsLogic.CharacterDied += () =>
 {
-   Console.WriteLine("DIED");
-   sender.Send();
+  // Console.WriteLine("DIED");
+   //sender.Send();
 };
 
 reader.KeyPressed += () =>

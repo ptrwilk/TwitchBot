@@ -2,6 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using TwitchBot;
+using TwitchBot.Core;
 using TwitchBot.Data;
 using TwitchBot.Factories;
 using TwitchBot.Models;
@@ -20,10 +21,10 @@ darkSoulsLogic.CharacterDied += () =>
    //sender.Send();
 };
 
-reader.KeyPressed += () =>
-{
-   sender.Send();
-};
+// reader.KeyPressed += () =>
+// {
+//    sender.Send();
+// };
 reader.Start();
 
 

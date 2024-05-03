@@ -1,13 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using TwitchBot.WPF.Converters;
+using TwitchBot.WPF.Services;
 
 namespace TwitchBot.WPF.Models;
 
-public class RowItemModel : INotifyPropertyChanged
+public class RowItemViewModel : INotifyPropertyChanged
 {
     private string _left;
     private string _right;
+    private bool _isSelected;
 
     public string Left
     {
@@ -28,7 +31,30 @@ public class RowItemModel : INotifyPropertyChanged
             if (value == _right) return;
             _right = value;
             OnPropertyChanged();
+            
+            ResultsService.Update(RowItemViewModelConverter.Convert(this));
         }
+    }
+
+    public bool IsSelected
+    {
+        get => _isSelected;
+        set
+        {
+            if (value == _isSelected) return;
+            _isSelected = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public void Increase()
+    {
+        Right = (RowItemViewModelConverter.Convert(this).Rips + 1).ToString();
+    }
+    
+    public void Decrease()
+    {
+        Right = (RowItemViewModelConverter.Convert(this).Rips - 1).ToString();
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

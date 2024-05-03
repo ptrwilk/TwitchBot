@@ -30,4 +30,8 @@
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\TwitchBot.Core\TwitchBot.Core.csproj" />
+    </ItemGroup>
+
 </Project>

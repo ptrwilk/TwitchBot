@@ -7,4 +7,14 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Update="Bosses.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TwitchBot.Core\TwitchBot.Core.csproj" />
+    </ItemGroup>
+
 </Project>

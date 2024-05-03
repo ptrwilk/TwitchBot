@@ -1,6 +1,6 @@
 ﻿using System.Net.Sockets;
 
-namespace TwitchBot;
+namespace TwitchBot.Core;
 
 public class MessageSender
 {

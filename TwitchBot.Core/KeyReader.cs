@@ -10,7 +10,7 @@ public enum Keys
     Num_0
 }
 
-public class KeyReader
+public class KeyReader : IDisposable
 {
     [DllImport("user32.dll")]
     public static extern int GetAsyncKeyState(Int32 i);
@@ -25,15 +25,22 @@ public class KeyReader
     public event Action<bool,Keys> KeyPressed = null!;
     private bool _pressed = false;
 
+    private bool _isStarted;
+
     public void Start()
     {
-        Thread kb = new Thread(Work);
-        kb.Start();
+        _isStarted = true;
+        Task.Run(Work);
+    }
+    
+    public void Stop()
+    {
+        _isStarted = false;
     }
 
     private void Work()
     {
-        while (true)
+        while (_isStarted)
         {
             Thread.Sleep(10);
 
@@ -72,7 +79,8 @@ public class KeyReader
         return (key & 0x8000) != 0;
     }
 
-    public void Stop()
+    public void Dispose()
     {
+        Stop();
     }
 }
